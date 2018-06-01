@@ -1,0 +1,16 @@
+{
+  "name": "elm-css-modules",
+  "version": "1.0.0",
+  "bin": {
+    "elm-css-modules": "index.js"
+  },
+  "dependencies": {
+    "chokidar": "^2.0.3",
+    "colors": "^1.3.0",
+    "glob": "^7.1.2",
+    "node-sass": "^4.9.0",
+    "postcss": "^6.0.22",
+    "postcss-modules": "^1.1.0",
+    "yargs": "^11.0.0"
+  }
+}

@@ -1,0 +1,75 @@
+<%
+  def example(path)
+    ext = path.split(".").last
+    "#### #{path}\n```#{ext}\n#{File.read(path)}```"
+  end
+%># elm-css-modules
+
+`elm-css-modules` compiles CSS modules written in CSS, Sass, or SCSS to plain
+CSS files and generates Elm definitions for every rule.
+
+## ?
+
+`elm-css-modules` compiles this:
+
+<%= example "examples/simple/src/Style/Thing.m.css" %>
+
+into these:
+
+<%= example "examples/simple/src/Style/Thing.css" %>
+
+<%= example "examples/simple/src/Style/Thing.elm" %>
+
+and you can use it like this:
+
+<%= example "examples/simple/src/Main.elm" %>
+
+## Why?
+
+This package is for you if you want:
+
+1. Modular CSS -- no more name conflicts, no more thinking about coming up with
+   globally unique names.
+2. No more typos -- every class is compiled into an Elm value which the Elm
+   compiler verifies to exist at compile time.
+3. Static CSS output -- you get a bunch of plain CSS files as output that you
+   can concatenate and minify with your favorite asset bundler.
+
+More information about CSS Modules [here](https://github.com/css-modules/css-modules).
+
+## Install
+
+### Yarn
+
+```
+$ yarn global add elm-css-modules
+# or
+$ yarn add elm-css-modules
+```
+
+### NPM
+
+```
+$ npm install --global elm-css-modules
+# or
+$ npm install --save elm-css-modules
+```
+
+## Usage
+
+1. Create CSS files with `.m.css`, `.m.sass`, or `.m.scss` extension in
+   `src/Style/`, e.g. `src/Style/Button.m.scss`.
+
+2. Run `elm-css-modules src` to compile once or `elm-css-modules src --watch`
+   to compile once and then watch for changes and compile on every change.
+
+3. Each `.m.{css,sass/scss}` file will be compiled into a `.css` and `.elm`
+   file in the same directory with the same name.
+
+4. Import and use the `Html.Attribute` values exported by the Elm file in your
+   code and include the CSS file into your application using your preferred
+   asset bundler or just add a `<link rel="stylesheet" href="…">` to your HTML file.
+
+## License
+
+MIT

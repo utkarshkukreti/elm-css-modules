@@ -1,0 +1,13 @@
+.thing {
+  font-size: 32px;
+}
+
+.red {
+  composes: thing;
+  color: red;
+}
+
+.green {
+  composes: thing;
+  color: green;
+}
